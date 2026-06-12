@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meok-pipl-mcp"
+version = "0.1.0"
+description = "PIPL (China Personal Information Protection Law) compliance MCP server. 4 articles, 4 tools. Cross-border transfer assessment, consent audit, data subject rights, security obligations."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "MEOK AI Labs", email = "hello@meok.ai" }]
+keywords = ["pipl", "china", "personal-information", "compliance", "mcp", "ai-governance", "meok", "csoai"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Legal Industry",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Security",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx>=0.27.0",
+]
+
+[project.scripts]
+meok-pipl-mcp = "meok_pipl_mcp.server:main"
+
+[project.urls]
+Homepage = "https://csoai.org"
+Repository = "https://github.com/CSOAI-ORG/pipl-mcp"
+Issues = "https://github.com/CSOAI-ORG/pipl-mcp/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["meok_pipl_mcp*"]
