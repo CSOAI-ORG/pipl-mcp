@@ -33,7 +33,7 @@ from datetime import datetime, timezone
 from typing import Any, Optional
 
 try:
-    from mcp.server.fastmcp import FastMCP
+    from mcp.server.mcpserver import MCPServer as FastMCP  # mcp 2.x: FastMCP renamed MCPServer
 except ImportError:
     raise ImportError("pip install mcp>=1.0.0 — required for the MCP server")
 
